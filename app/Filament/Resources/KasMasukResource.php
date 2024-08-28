@@ -25,6 +25,8 @@ class KasMasukResource extends Resource
 
     protected static ?string $navigationLabel = 'Kas Masuk';
 
+    protected static ?string $pluralModelLabel = 'Kas Masuk';
+
     protected static ?int $navigationSort = 1;
 
     public static function form(Form $form): Form

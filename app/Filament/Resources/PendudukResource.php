@@ -23,6 +23,8 @@ class PendudukResource extends Resource
 
     protected static ?string $navigationLabel = 'Penduduk';
 
+    protected static ?string $pluralModelLabel = 'Penduduk';
+
     public static function form(Form $form): Form
     {
         return $form

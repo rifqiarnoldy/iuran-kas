@@ -24,6 +24,8 @@ class KartuKeluargaResource extends Resource
 
     protected static ?string $navigationLabel = 'Kartu Keluarga';
 
+    protected static ?string $pluralModelLabel = 'Kartu Keluarga';
+
     protected static ?int $navigationSort = 2;
 
     public static function form(Form $form): Form
