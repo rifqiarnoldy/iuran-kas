@@ -28,7 +28,7 @@ class KasKeluarResource extends Resource
 
     protected static ?string $navigationLabel = 'Kas Keluar';
 
-    protected static ?string $recordTitleAttribute = 'Kas Keluar';
+    protected static ?string $modelLabel = 'Kas Keluar';
 
     protected static ?int $navigationSort = 2;
 
