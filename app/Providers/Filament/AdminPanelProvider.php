@@ -17,6 +17,8 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Filament\Navigation\NavigationItem;
+use Filament\Pages\Dashboard;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -53,6 +55,13 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
-            ])->sidebarCollapsibleOnDesktop();
+            ])
+            ->navigationItems([
+                NavigationItem::make('Analytics')
+                    ->icon('heroicon-o-presentation-chart-line')
+                    ->group('Reports')
+                    ->sort(3),
+            ])
+            ->sidebarCollapsibleOnDesktop();
     }
 }

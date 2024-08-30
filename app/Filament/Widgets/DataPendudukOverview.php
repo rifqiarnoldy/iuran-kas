@@ -23,19 +23,19 @@ class DataPendudukOverview extends BaseWidget
     {
         return [
             //
-            Stat::make('Kartu Keluarga', $this->kartuKeluarga)
+            Stat::make('Data jumlah penduduk', 0)
                 ->description('32k increase')
                 ->descriptionIcon('heroicon-m-arrow-trending-up')
                 ->color('success'),
-            Stat::make('Penduduk', $this->penduduk)
+            Stat::make('Data Penduduk Baru bulan ini', 0)
                 ->description('7% increase')
                 ->descriptionIcon('heroicon-m-arrow-trending-down')
                 ->color('danger'),
-            Stat::make('Laki - laki', $this->lakiLaki)
+            Stat::make('Data Penduduk Pindah Bulan ini', 0)
                 ->description('3% increase')
                 ->descriptionIcon('heroicon-m-arrow-trending-up')
                 ->color('success'),
-            Stat::make('Perempuan', $this->perempuan)
+            Stat::make('Data Tamu Penduduk', 0)
                 ->description('3% increase')
                 ->descriptionIcon('heroicon-m-arrow-trending-up')
                 ->color('success'),
