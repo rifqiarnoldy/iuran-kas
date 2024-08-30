@@ -30,8 +30,10 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login()
             ->colors([
-                'primary' => Color::Emerald,
+                'primary' => Color::Sky,
             ])
+            ->brandLogo(asset('img/logo.jpg'))
+            ->brandLogoHeight('2rem')
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
@@ -57,30 +59,26 @@ class AdminPanelProvider extends PanelProvider
                 Authenticate::class,
             ])
             ->navigationItems([
-                NavigationItem::make('Data Penduduk')
-                    ->icon('heroicon-o-user-group')
-                    ->group('Penduduk')
-                    ->sort(1),
-                NavigationItem::make('Input Data Pribadi dan Keluarga')
-                    ->icon('heroicon-o-users')
-                    ->group('Penduduk')
-                    ->sort(1),
+                // NavigationItem::make('Input Data Pribadi dan Keluarga')
+                //     ->icon('heroicon-o-users')
+                //     ->group('Penduduk')
+                //     ->sort(1),
                 NavigationItem::make('Pendataan Kendaaraan Warga')
                     ->icon('heroicon-o-truck')
                     ->group('Penduduk')
-                    ->sort(1),
+                    ->sort(3),
                 NavigationItem::make('Pendataan Tamu Warga')
                     ->icon('heroicon-o-identification')
                     ->group('Penduduk')
-                    ->sort(1),
+                    ->sort(4),
                 NavigationItem::make('Pendataan Warga Pindah Alamat')
                     ->icon('heroicon-o-home-modern')
                     ->group('Penduduk')
-                    ->sort(1),
+                    ->sort(5),
                 NavigationItem::make('Pendataan Warga Meninggal')
                     ->icon('heroicon-o-user-circle')
                     ->group('Penduduk')
-                    ->sort(1),
+                    ->sort(6),
                 NavigationItem::make('Data Pengurus')
                     ->icon('heroicon-o-user')
                     ->group('Pengurus')
