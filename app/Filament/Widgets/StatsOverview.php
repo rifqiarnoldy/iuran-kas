@@ -24,18 +24,18 @@ class StatsOverview extends BaseWidget
     {
         return [
             //
-            Stat::make('Kas Masuk Bulan Ini', 'Rp. ' . number_format($this->kasMasuk))
-                ->description('32k increase')
-                ->descriptionIcon('heroicon-m-arrow-trending-up')
-                ->color('success'),
-            Stat::make('Kas Keluar Bulan Ini', 'Rp. ' . number_format($this->kasKeluar))
-                ->description('7% increase')
-                ->descriptionIcon('heroicon-m-arrow-trending-down')
-                ->color('danger'),
-            Stat::make('Total Kas', 'Rp. ' . number_format($this->totalKas))
-                ->description('3% increase')
-                ->descriptionIcon('heroicon-m-arrow-trending-up')
-                ->color('success'),
+            // Stat::make('Kas Masuk Bulan Ini', 'Rp. ' . number_format($this->kasMasuk))
+            //     ->description('32k increase')
+            //     ->descriptionIcon('heroicon-m-arrow-trending-up')
+            //     ->color('success'),
+            // Stat::make('Kas Keluar Bulan Ini', 'Rp. ' . number_format($this->kasKeluar))
+            //     ->description('7% increase')
+            //     ->descriptionIcon('heroicon-m-arrow-trending-down')
+            //     ->color('danger'),
+            // Stat::make('Total Kas', 'Rp. ' . number_format($this->totalKas))
+            //     ->description('3% increase')
+            //     ->descriptionIcon('heroicon-m-arrow-trending-up')
+            //     ->color('success'),
         ];
     }
 }
