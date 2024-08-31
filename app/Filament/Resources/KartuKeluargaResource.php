@@ -12,19 +12,16 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Livewire\Attributes\Title;
 
 class KartuKeluargaResource extends Resource
 {
     protected static ?string $model = KartuKeluarga::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-users';
 
-    protected static ?string $navigationGroup = 'Kelola Data';
+    protected static ?string $navigationGroup = 'Penduduk';
 
-    protected static ?string $navigationLabel = 'Kartu Keluarga';
-
-    protected static ?string $pluralModelLabel = 'Kartu Keluarga';
+    protected static ?string $pluralModelLabel = 'Data Pribadi dan Keluarga';
 
     protected static ?int $navigationSort = 2;
 
@@ -55,9 +52,10 @@ class KartuKeluargaResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('no_kk')
+                    ->label('Nomor Kartu Keluarga')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('data_keluarga_count')->counts('data_keluarga')
-                    ->label('Jumlah Data Keluarga'),
+                    ->label('Anggota Keluarga'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

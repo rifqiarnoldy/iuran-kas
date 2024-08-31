@@ -9,9 +9,4 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateKartuKeluarga extends CreateRecord
 {
     protected static string $resource = KartuKeluargaResource::class;
-
-    protected function getRedirectUrl(): string
-    {
-        return $this->getResource()::getUrl('index');
-    }
 }

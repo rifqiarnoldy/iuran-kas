@@ -30,8 +30,10 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login()
             ->colors([
-                'primary' => Color::Emerald,
+                'primary' => Color::Sky,
             ])
+            ->brandLogo(asset('img/logo.jpg'))
+            ->brandLogoHeight('2rem')
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
@@ -57,10 +59,94 @@ class AdminPanelProvider extends PanelProvider
                 Authenticate::class,
             ])
             ->navigationItems([
-                NavigationItem::make('Analytics')
-                    ->icon('heroicon-o-presentation-chart-line')
-                    ->group('Reports')
+                // NavigationItem::make('Input Data Pribadi dan Keluarga')
+                //     ->icon('heroicon-o-users')
+                //     ->group('Penduduk')
+                //     ->sort(1),
+                NavigationItem::make('Pendataan Kendaaraan Warga')
+                    ->icon('heroicon-o-truck')
+                    ->group('Penduduk')
                     ->sort(3),
+                NavigationItem::make('Pendataan Tamu Warga')
+                    ->icon('heroicon-o-identification')
+                    ->group('Penduduk')
+                    ->sort(4),
+                NavigationItem::make('Pendataan Warga Pindah Alamat')
+                    ->icon('heroicon-o-home-modern')
+                    ->group('Penduduk')
+                    ->sort(5),
+                NavigationItem::make('Pendataan Warga Meninggal')
+                    ->icon('heroicon-o-user-circle')
+                    ->group('Penduduk')
+                    ->sort(6),
+                NavigationItem::make('Data Pengurus')
+                    ->icon('heroicon-o-user')
+                    ->group('Pengurus')
+                    ->sort(2),
+                NavigationItem::make('History Pengurus')
+                    ->icon('heroicon-o-folder-arrow-down')
+                    ->group('Pengurus')
+                    ->sort(2),
+                NavigationItem::make('Surat Keterangan Domisili')
+                    ->icon('heroicon-o-document-text')
+                    ->group('Permohonan Surat Keterangan')
+                    ->sort(3),
+                NavigationItem::make('Surat Pengantar')
+                    ->icon('heroicon-o-document-duplicate')
+                    ->group('Permohonan Surat Keterangan')
+                    ->sort(3),
+                NavigationItem::make('Surat Tanda Terima')
+                    ->icon('heroicon-o-document-check')
+                    ->group('Permohonan Surat Keterangan')
+                    ->sort(3),
+                NavigationItem::make('Surat Keterangan Lainnya')
+                    ->icon('heroicon-o-clipboard-document')
+                    ->group('Permohonan Surat Keterangan')
+                    ->sort(3),
+                NavigationItem::make('Parameter')
+                    ->icon('heroicon-o-ellipsis-horizontal-circle')
+                    ->group('Parameter')
+                    ->sort(4),
+                NavigationItem::make('Upload Bukti Pengeluaran')
+                    ->icon('heroicon-o-arrow-up-tray')
+                    ->group('Keuangan Flamboyan Loka')
+                    ->sort(5),
+                NavigationItem::make('Rekapitulasi Iuran Bulanan')
+                    ->icon('heroicon-o-bookmark-square')
+                    ->group('Keuangan Flamboyan Loka')
+                    ->sort(5),
+                NavigationItem::make('Laporan Tunggakan Iuran Bulanan')
+                    ->icon('heroicon-o-document-magnifying-glass')
+                    ->group('Keuangan Flamboyan Loka')
+                    ->sort(5),
+                NavigationItem::make('Kas Masuk dan Kas Keluar')
+                    ->icon('heroicon-o-currency-dollar')
+                    ->group('Keuangan Flamboyan Loka')
+                    ->sort(5),
+                NavigationItem::make('Laporan Bulanan')
+                    ->icon('heroicon-o-presentation-chart-line')
+                    ->group('Keuangan Flamboyan Loka')
+                    ->sort(5),
+                NavigationItem::make('Data Security')
+                    ->icon('heroicon-o-shield-check')
+                    ->group('Security')
+                    ->sort(6),
+                NavigationItem::make('Berita Flamboyan Loka')
+                    ->icon('heroicon-o-radio')
+                    ->group('Info Flamboyan')
+                    ->sort(7),
+                NavigationItem::make('Agenda Flamboyan Loka')
+                    ->icon('heroicon-o-clipboard-document-check')
+                    ->group('Info Flamboyan')
+                    ->sort(7),
+                NavigationItem::make('Pengaduan Keluhan')
+                    ->icon('heroicon-o-rss')
+                    ->group('Aduan Online')
+                    ->sort(8),
+                NavigationItem::make('Kritik dan Saran')
+                    ->icon('heroicon-o-chat-bubble-bottom-center-text')
+                    ->group('Aduan Online')
+                    ->sort(8),
             ])
             ->sidebarCollapsibleOnDesktop();
     }

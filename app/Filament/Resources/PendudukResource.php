@@ -17,24 +17,24 @@ class PendudukResource extends Resource
 {
     protected static ?string $model = Penduduk::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-user-plus';
+    protected static ?string $navigationIcon = 'heroicon-o-user-group';
 
-    protected static ?string $navigationGroup = 'Kelola Data';
+    protected static ?string $navigationGroup = 'Penduduk';
 
-    protected static ?string $navigationLabel = 'Penduduk';
+    protected static ?string $pluralModelLabel = 'Data Penduduk';
 
-    protected static ?string $pluralModelLabel = 'Penduduk';
+    protected static ?int $navigationSort = 1;
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Forms\Components\TextInput::make('nama')
-                    ->required(),
+                    ->required()
+                    ->maxLength(255),
                 Forms\Components\TextInput::make('nik')
-                    ->unique(table: Penduduk::class, column: 'nik')
-                    ->minLength(16)
-                    ->required(),
+                    ->required()
+                    ->maxLength(255),
                 Forms\Components\Select::make('jenis_kelamin')
                     ->options([
                         'Laki-laki' => 'Laki - laki',
@@ -42,16 +42,18 @@ class PendudukResource extends Resource
                     ])
                     ->required(),
                 Forms\Components\TextInput::make('tempat_lahir')
-                    ->required(),
+                    ->required()
+                    ->maxLength(255),
                 Forms\Components\DatePicker::make('tanggal_lahir')
-                    ->native(false)
                     ->displayFormat('d-m-Y')
                     ->locale('id')
                     ->required(),
                 Forms\Components\TextInput::make('agama')
-                    ->required(),
+                    ->required()
+                    ->maxLength(255),
                 Forms\Components\TextInput::make('pekerjaan')
-                    ->required(),
+                    ->required()
+                    ->maxLength(255),
             ]);
     }
 
@@ -63,8 +65,7 @@ class PendudukResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('nik')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('jenis_kelamin')
-                    ->searchable(),
+                Tables\Columns\TextColumn::make('jenis_kelamin'),
                 Tables\Columns\TextColumn::make('tempat_lahir')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('tanggal_lahir')
